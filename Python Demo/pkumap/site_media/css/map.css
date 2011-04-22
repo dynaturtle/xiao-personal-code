@@ -1,0 +1,148 @@
+.smallmap {
+    height: 300px;
+    width: 300px;
+} #mainMap {
+    height: 90%;
+    width: 80%;
+} .olControlPanel div {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 5px;
+    background-color: red;
+} .olControlPanel .olControlMouseDefaultsItemActive {
+    background-color: blue;
+    background-image: url("../lib/theme/default/img/pan_on.png");
+} .olControlPanel .olControlMouseDefaultsItemInactive {
+    background-color: orange;
+    background-image: url("../lib/theme/default/img/pan_off.png");
+} .olControlPanel .olControlDrawFeatureItemActive {
+    width: 22px;
+    height: 22px;
+    background-image: url("../lib/theme/default/img/draw_line_on.png");
+} .olControlPanel .olControlDrawFeatureItemInactive {
+    width: 22px;
+    height: 22px;
+    background-image: url("../lib/theme/default/img/draw_line_off.png");
+} .olControlPanel .olControlSelectFeatureItemActive {
+    width: 22px;
+    height: 22px;
+    background-image: url("../lib/theme/default/img/select_on.png");
+} .olControlPanel .olControlSelectFeatureItemInactive {
+    width: 22px;
+    height: 22px;
+    background-image: url("../lib/theme/default/img/select_off.png");
+} .olControlPanel .olControlLayerSelectorActive {
+    width: 22px;
+    height: 22px;
+    background-color: green;
+} .olControlPanel .olControlLayerSelectorInactive {
+    width: 22px;
+    height: 22px;
+    background-color: gray;
+}
+
+/* popup related styles */ .olPopup {
+    overflow: inherit;
+} .olPopup * {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+} .olPopup a.close {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 10px;
+    right: 28px;
+    background: url(../lib/img/close.gif) no-repeat top left;
+    margin: 0px;
+    font-size: 1px;
+    padding: 0px;
+} .olPopup a.close:hover {
+    background: url(../lib/img/close-hover.gif) no-repeat top left;
+} .olPopup .olPopupContent {
+    min-width: 200px;
+    background-color: #ffffff !important;
+    padding: 1px !important;
+    margin: 0px !important;
+    font-size: 0.80em;
+} .olPopup .olPopupContent h2 {
+    font-size: small;
+    text-align: center;
+    padding: 2px 0px 2px 0px;
+    margin: 0px 6px 0px 6px;
+    text-transform: capitalize;
+} .olPopup .olPopupContent table {
+    border-collapse: collapse;
+    overflow: auto;
+    padding: 0px;
+} .olPopupContent table td {
+    padding: 4px;
+    border: 1px solid #cccccc;
+} .olPopup itemname {
+    color: black;
+    font-size: 12pt;
+    font-weight: bold;
+    text-decoration: none;
+} .olPopup placename {
+    color: rgb(85, 26, 139);
+    font-size: 8pt;
+    font-weight: bold;
+    text-decoration: none;
+} .olPopup desc {
+    font-size: 9pt;
+    margin-bottom: 5px;
+} .olPopup url {
+    font-size: 7pt;
+    margin-bottom: 5px;
+    color: rgb(0, 128, 0);
+}
+
+.customOlPanel div{    
+	float:left;
+	left:50px;
+	position: relative;	
+ 	display: block;
+    width: 60px;
+    height: 24px;
+    margin: 5px;	
+	border: 1px outset gray;
+	/*float:right;
+	right:100px;*/
+    background-color: white;
+} 
+
+.customOlPanel .blueItemInactive {
+	background-image: url("../img/vectorBaseLayerLogo.png");
+}
+
+.customOlPanel .blueItemActive {
+	background-image: url("../img/vectorBaseLayerLogo.png");
+}
+
+.customOlPanel .orangeItemInactive {
+	background-image: url("../img/imageBaseLayerLogo.png");
+}
+
+.customOlPanel .orangeItemActive {
+	background-image: url("../img/imageBaseLayerLogo.png");
+}
+
+.customOlPanel .greenItemInactive {
+	background-image: url("../img/mixedBaseLayerLogo.png");
+}
+
+.customOlPanel .greenItemActive {
+	background-image: url("../img/mixedBaseLayerLogo.png");
+}
+
+.legendOlPanel{    	
+	right: 3px;
+    bottom: 1.5em;
+    display: block;
+    position: absolute;
+	width:100px;
+	height:223px;
+	background-image: url("../img/legend.png");    	
+} 
+

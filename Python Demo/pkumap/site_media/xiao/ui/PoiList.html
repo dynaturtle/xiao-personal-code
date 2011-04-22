@@ -1,0 +1,19 @@
+<div>
+	{% if features|length > 0%}
+    {% for feature in features %}
+        <div class='feature-text'>
+            <h1>{{ feature.name }}</h1>
+		{% if feature.attributes.desc %}
+			<p> {{feature.attributes.desc}} </p>
+		{% endif %}
+		{% if feature.attributes.picurl %}
+			<img src='{{feature.attributes.picurl}}' class='feature-text-thumbnail'></img>
+		{% endif %}
+	</div>
+    {% endfor %}
+	{% else%}
+	<div>
+		对不起，没有匹配的记录
+	</div>
+	{% endif %}
+</div>

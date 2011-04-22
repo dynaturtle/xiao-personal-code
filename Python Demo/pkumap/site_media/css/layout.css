@@ -1,0 +1,124 @@
+body{
+	background:#d5ddf3;
+}
+#mainDiv{
+	width: 100%;
+	height: 100%; 
+	border: thick;
+}
+
+#heading{
+	width:100%;
+	padding:5px;
+}
+
+#heading .logo{
+	padding:15px;
+/*	width: 332.4px;
+	height: 57.77px;*/
+	float:left;
+}
+
+#heading .searchformcell{
+	width: 100%;
+}
+
+#heading #tabs li{
+	line-height: 0.7em;
+}
+
+#heading #keyword{
+	font-size: 138%;
+	font-style: normal;
+	line-height: normal;
+	padding: 4px 28px 0px 6px;
+}
+
+#heading #startpt{
+	font-size: 138%;
+	font-style: normal;
+	line-height: normal;
+	padding: 4px 28px 0px 6px;
+}
+
+#heading #routeSearchForm span
+{
+	font-size: 138%;
+}
+
+#heading #endpt{
+	font-size: 138%;
+	font-style: normal;
+	line-height: normal;
+	padding: 4px 28px 0px 6px;
+}
+
+#heading #searchButton{
+	font-size: 115%;
+	cursor: pointer;
+	height: 30px;
+	overflow: ;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.strip{
+	margin-top:10px;
+	width:100%;
+	height: 10px;
+	background:#d5ddf3;
+}
+#sidebar{
+	padding:5px;
+	margin:2px; 
+	border:solid 1px #A9A9A9;
+}
+
+#textInfoWindo{
+	padding:10px;
+}
+
+.orgclass itemname{
+	color: rgb(85, 26, 139);
+	font-size: 1.3em;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.orgclass placename{
+	color: rgb(85, 26, 139);
+	font-size: 1.1666em;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.orgclass desc{
+	font-size: 1em;
+	margin-bottom: 0.8em;	
+}
+
+.orgclass url{
+	font-size: 1em;
+	margin-bottom: 0.8em;	
+	color:rgb(0, 128, 0);
+}
+
+
+
+keyword{	
+	font-weight: bolder;	
+}
+
+.marker{
+	width: 40px;
+	height: 40px;
+	float:left;
+}
+
+.searchresulthead{
+	padding: 5px;
+}
+
+.belowimage{
+	float:left;
+}

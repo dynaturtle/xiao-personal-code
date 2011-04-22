@@ -1,0 +1,157 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>北京大学校园地图服务(燕园校区)</title>
+        <!-- SECTION 1 -->
+        <style type="text/css">
+            @import "/site_media/lib/dojo/dijit/themes/tundra/tundra.css";
+            @import "/site_media/lib/dojo/dojo/resources/dojo.css";
+			@import "/site_media/css/smoothness/jquery-ui-1.8.custom.css";
+			@import "/site_media/css/map.css";
+			@import "/site_media/css/layout.css";
+        </style>
+        <script type="text/javascript" src="/site_media/lib/dojo/dojo/dojo.js" djConfig="parseOnLoad: true, isDebug: false,indEncoding:'UTF-8'"></script>
+        <script src="/site_media/javascript/Map.js" type="text/javascript">
+        </script>
+       <script type="text/javascript">
+            dojo.require("dijit.layout.LayoutContainer");
+            dojo.require("dijit.Toolbar");
+            dojo.require("dijit.layout.SplitContainer");
+            dojo.require("dijit.layout.AccordionContainer");
+            dojo.require("dijit.layout.ContentPane");
+            dojo.require("dijit.layout.BorderContainer");
+            dojo.require("dijit.layout.TabContainer");
+            dojo.require("dijit.form.Button");
+            dojo.require("dijit.form.TextBox");
+            dojo.require("dijit.TitlePane");
+	    dojo.require("dojox.layout.ContentPane");
+	    dojo.registerModulePath("ui", "../../../javascript/ui");
+	    dojo.require("ui.QueryList");
+            dojo.addOnLoad(initMap);
+        </script>
+		<script type="text/javascript" charset="utf-8" src="/site_media/lib/jquery.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/site_media/lib/jquery-ui/jquery-ui.js"></script>
+        <!-- SECTION 2 -->
+        <script src="/site_media/lib/openlayers/OpenLayers.js" type="text/javascript">
+        </script>
+        <script src="lib/google_style_popup.js" type="text/javascript">
+        </script>
+        <script src="/site_media/javascript/Query.js" type="text/javascript">
+        </script>
+       <script src="/site_media/javascript/Event.js" type="text/javascript">
+        </script>
+        <script src="/site_media/javascript/Init.js" type="text/javascript">
+        </script>
+        <script src="/site_media/javascript/XHR.js" type="text/javascript">
+        </script>
+        <script src="/site_media/javascript/UI.js" type="text/javascript">
+        </script>
+        <script src="/site_media/javascript/Data.js" type="text/javascript">
+        </script>
+        <script src="/site_media/javascript/Util.js" type="text/javascript">
+        </script>
+  		<script type="text/javascript">
+		  	jQuery.noConflict();
+		    jQuery(document).ready(function(){
+				bindTagEvents();
+				jQuery(function() {
+						jQuery("#tabs").tabs();
+				});
+			});
+		</script>
+    </head>
+    <body class="tundra">
+        <div style="WIDTH: 100%; HEIGHT: 100%; border: thick" dojoType="dijit.layout.LayoutContainer" id="mainDiv">
+            <div dojoType="dijit.Toolbar" layoutAlign="top">
+                <div id='heading' style="float:left">
+                    <img src="/site_media/img/pku_cms_logo.png" width="332.4" height="57.77" alt="北京大学地图服务" />
+                </div>
+                <div id='mapsearch' >
+						<div style="clear:both;">
+						</div>
+						<br>
+						<div id="tabs">
+							<ul>
+								<li><a href="#tabs-1">搜索</a></li>
+								<li><a href="#tabs-2">步行</a></li>
+							</ul>
+							<div id="tabs-1">
+								<form id="searchform" action="" onsubmit="onKeywordSubmit(); return false;">
+			                        <input autocomplete="on" id="searchKeyword" type="text" style="width: 20%">
+									<input id="searchButton" value="搜索" type="submit" style="margin-left:10px">
+			                    </form>
+							</div>
+							<div id="tabs-2">
+								<form id="routesearchform" action=""onsubmit="return false;">
+									<input type="text" name="startpt" value="" id="startpt">
+									<input type="text" name="endpt" value="" id="endpt">
+									<input id="searchButton" value="搜索" type="submit" style="margin-left:10px">
+								</form>
+							</div>
+						</div>
+                </div>
+            </div>
+            <div dojoType="dijit.layout.SplitContainer" orientation="horizontal" layoutAlign="client">
+                <div dojoType="dijit.layout.ContentPane" sizeShare="20" id="sidebar" style="margin:2px; border:solid 1px #A9A9A9;">
+                    <div dojoType="dijit.TitlePane" title="如何使用" id="instruction">
+                        <h3 align="center">欢迎使用北京大学校园地图</h3>
+                        <br>
+                        你可以:
+                        <br>
+                        <ul>
+                            <li>
+                                使用鼠标对地图进行拖动和放大缩小操作
+                                <br>
+                                <br>
+                            </li>
+                            <li>
+                                搜索校园热点信息
+                                <br>
+                                <a href="javascript:keywordSearch('车协');">北大车协义务修车，免费换件啦!</a>
+                                <br>                             
+                                <br>
+                            </li>
+                            <li>
+                                搜索学校的组织机构
+                                <br>
+                                <a href="javascript:keywordSearch('图书馆');">图书馆</a>
+                                <br>
+                                <a href="javascript:keywordSearch('理科楼');">理科楼</a>
+                                <br>
+                                <br>
+                            </li>
+                            <li>
+                                搜索校园路线
+                                <br>
+                                <a href="javascript:routeSearch('图书馆','三角地');">图书馆到三角地</a>
+                                <br>
+                                <a href="javascript:routeSearch('东门','西门');">东门到西门</a>
+                                <br>
+                                <br>
+                            </li>
+                            <li>
+                                点击标记查看兴趣点的详细信息
+                                <br>
+                                <br>
+                            </li>
+                        </ul>
+                        <br>
+                        <br>
+                    </div>
+                    <div dojoType="dijit.TitlePane" title="探索校园" id="campusexplore">						
+							<ul>
+								<li id='org'><a href="javascript:void(0);">组织机构</a></li>
+								<li id='event'><a href="javascript:void(0);">校园热点</a></li>
+							</ul>
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="searchresult" style="padding:10px">
+                    </div>
+                </div>
+                <div dojoType="dijit.layout.ContentPane" title="校园地图" id="mainMap" sizeShare="80">
+                </div>
+            </div>
+        </div>
+        <div id = dojoDebugOutput>
+        </div>
+    </body>
+</html>

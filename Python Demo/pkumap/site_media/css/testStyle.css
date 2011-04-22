@@ -1,0 +1,22 @@
+.shadow {
+    position:absolute;
+    z-index:1000;
+    top:0px;
+    left:0px; /*www.phpq.net*/
+    background:gray;
+    background-color:#ffcc00;    
+	progidximagetransform.microsoft.dropshadow(color=#ff404040,offx=2,offy=2,positives=true);
+}
+
+.multieditbox{
+    background: #f8f8f8;
+    border-bottom: #b7b7b7 1px solid;
+    border-left: #b7b7b7 1px solid;
+    border-right: #b7b7b7 1px solid;
+    border-top: #b7b7b7 1px solid;
+    color: #000000;
+    cursor: text;
+    font-family: "arial";
+    font-size: 9pt;
+    padding: 1px; /*www.phpq.net*/
+}

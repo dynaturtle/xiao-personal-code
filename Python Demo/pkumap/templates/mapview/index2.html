@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>北京大学校园地图服务(燕园校区)</title>        
+        <style type="text/css">
+			@import "/site_media/css/tundra/tundra.css";
+			@import "/site_media/lib/dojo/dojo/resources/dojo.css";
+			@import "/site_media/css/smoothness/jquery-ui-1.8.custom.css";
+			@import "/site_media/css/map.css";
+			@import "/site_media/css/layout.css";
+			@import "/site_media/css/jquery.autocomplete.css";
+        </style>
+        <script type="text/javascript" src="/site_media/lib/dojo/dojo/dojo.js" djConfig="parseOnLoad: true, isDebug: false,indEncoding:'UTF-8'"></script>
+		<script type="text/javascript" charset="utf-8" src="/site_media/lib/jquery.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/site_media/lib/jquery-ui/jquery-ui.js"></script>
+		<script type='text/javascript' charset="utf-8" src='/site_media/lib/jquery.bgiframe.min.js'></script>
+		<script type='text/javascript' charset="utf-8" src='/site_media/lib/jquery.ajaxQueue.js'></script>	
+		<script type='text/javascript' charset="utf-8" src='/site_media/lib/jquery.autocomplete.min.js'></script>
+		<script type="text/javascript" charset="utf-8" src="/site_media/lib/openlayers/OpenLayers.js"></script>
+		<script type="text/javascript" charset="utf-8" src='/site_media/xiao/xiao.js'></script>
+		<script type="text/javascript" charset="utf-8" src="/site_media/xiao/start.js"></script>	
+    </head>
+    <body class="tundra">
+        <div dojoType="dijit.layout.LayoutContainer" id="mainDiv">
+            <div dojoType="dijit.Toolbar" layoutAlign="top" id="heading">
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<img src="/site_media/img/pku_cms_logo.png" class="logo" alt="北京大学地图服务" />
+							</td> <!-- img logo -->
+							<td class="searchformcell">
+								<div id='mapsearch'>
+									<div style="clear:both;"> </div>				
+									<br>
+									<div id="tabs">
+										<ul>
+										<li><a href="#tabs-1">地名</a></li>
+										<li><a href="#tabs-2">路线</a></li>
+										</ul>
+										<div id="tabs-1">
+											<form id="poiSearchForm" action="" autocomplete="off">
+												<input name="keyword" id="keyword" type="text">
+												<input id="searchButton" value="搜索" type="submit" style="margin-left:10px">
+											</form>
+										</div><!-- tabs-1 -->
+										<div id="tabs-2">
+											<form id="routeSearchForm" action="" onsubmit="return false;" autocomplete="off">
+											<input type="text" name="startpt" value="" id="startpt"> 
+											<span>到</span>
+											<input type="text" name="endpt" value="" id="endpt">
+											<input id="searchButton" value="搜索" type="submit" style="margin-left:10px">
+											</form>
+										</div><!-- tabs-2 -->
+									</div><!-- tabs -->
+								</div> <!-- mapsearch -->
+							</td> <!-- search form cell -->
+						</tr>
+					</tbody>
+				</table>
+                
+			</div><!-- heading -->		        
+            <div dojoType="dijit.layout.SplitContainer" orientation="horizontal" layoutAlign="client">
+                <div dojoType="dijit.layout.ContentPane" sizeShare="20" id="sidebar" >
+		    <div dojoType="dijit.TitlePane" id="naviInfoWindow" title="校园导航">
+			<a href='javascript:void(0)'>图书馆</a>
+			<a href='javascript:void(0)'>理科楼</a>
+		    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="textInfoWindow">
+                    </div>
+                </div><!-- sidebar -->
+                <div dojoType="dijit.layout.ContentPane" title="校园地图" id="mainMap" sizeShare="80">
+                </div> <!-- mainMap -->
+            </div> <!-- bottom -->
+        </div> <!-- mainDiv -->
+	</body>
+</html>
